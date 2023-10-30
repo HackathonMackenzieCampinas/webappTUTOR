@@ -1,0 +1,15 @@
+FORM RESPOSTA
+===================================================
+SUBISTITUIR
+viewform?usp=pp_url&
+POR:
+formResponse?&submit=Submit?usp=pp_url
+
+https://docs.google.com/forms/d/e/1FAIpQLSeCAO-D0694v2HCWnxEKzUVHcOPlfzRiLD0KX8ymbp-uopr2g/viewform?usp=pp_url&entry.1836324468=MAIL&entry.1777983526=Equipe+01&entry.1149657510=NOME&entry.268399899=RESP&entry.332935035=OBS
+
+https://docs.google.com/forms/d/e/1FAIpQLSeCAO-D0694v2HCWnxEKzUVHcOPlfzRiLD0KX8ymbp-uopr2g/formResponse?&submit=Submit?usp=pp_url
+&entry.1836324468=MAIL
+&entry.1777983526=Equipe+01
+&entry.1149657510=NOME
+&entry.268399899=RESP
+&entry.332935035=OBS
