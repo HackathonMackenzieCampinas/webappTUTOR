@@ -114,9 +114,9 @@ def exibir():
             st.info(NregDf01R)
         st.subheader(option)
         st.warning('Dúvida(s) Enviada(s)')
-        st.code(df01D['duvida']) 
+        st.write(df01D['duvida']) 
         st.info('Resposta do(a) TUTOR(A):')
-        st.code(df01R['resposta'])   
+        st.write(df01R['resposta'])   
   
 exibir() 
 with st.form("Formulario para RESPOSTAS DOS TUTORES", clear_on_submit=True):   
