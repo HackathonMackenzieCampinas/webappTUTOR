@@ -94,13 +94,13 @@ def exibir():
         st.header("Relatório de DÚVIDAS")   
         st.subheader(option)
         st.warning('Dúvida(s) Enviada(s)')
-        st.code(df01D['duvida']) 
+        st.write(df01D['duvida']) 
                
     elif choice == "Respostas":       
         st.header("Relatório de RESPOSTAS")    
         st.subheader(option)    
         st.info('Resposta do(a) TUTOR(A):')
-        st.code(df01R['resposta'])  
+        st.write(df01R['resposta'])  
 
                    
     elif choice == "Dúvidas e Respostas":       
