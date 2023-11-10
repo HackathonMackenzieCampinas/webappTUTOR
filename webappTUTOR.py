@@ -67,7 +67,7 @@ st.sidebar.image(image01, width=300, caption='2º Hackathon Mackenzie Campinas -
  
 def exibir():
     #DÚVIDAS
-    rD = requests.get('https://docs.google.com/spreadsheets/d/e/2PACX-1vRzPHn3E7ZBSxmVq5lKH5GYxtu0IykxSkWCS16RHYmyXXHmvlErzXF7EJhetiZysvF3i5QP5r8Ti2nY/pub?gid=1211657281&single=true&output=csv')
+    rD = requests.get('https://docs.google.com/spreadsheets/d/e/2PACX-1vQQNWj747l2uR_TOZ_4cTnajPMmbpLb84ILH1KMzu1eN3BwalrUTuN7XrcWWU6q5qVGnw-Ay4QEG1x_/pub?gid=1381735194&single=true&output=csv')
     dataD = rD.content
     dfD = pd.read_csv(BytesIO(dataD), index_col=0)
     NregD = len(dfD)
@@ -94,14 +94,21 @@ def exibir():
         st.header("Relatório de DÚVIDAS")   
         st.subheader(option)
         st.warning('Dúvida(s) Enviada(s)')
-        st.write(df01D['duvida']) 
+        #st.write(df01D['duvida']
+        nD = len(df01D['duvida'])
+        for i in range(nD):
+            with st.chat_message("user"):   
+                st.write(df01D['duvida'][i]) 
                
     elif choice == "Respostas":       
         st.header("Relatório de RESPOSTAS")    
-        st.subheader(option)    
+        st.subheader(option)   
         st.info('Resposta do(a) TUTOR(A):')
-        st.write(df01R['resposta'])  
-
+        #st.write(df01R['resposta']) 
+        nR = len(df01R['resposta'])
+        for j in range(nR):
+            with st.chat_message("user", avatar = "👨‍⚖️"):
+                st.write(df01R['resposta'][j])
                    
     elif choice == "Dúvidas e Respostas":       
         st.header("Relatório: DÚVIDAS E RESPOSTAS")  
@@ -111,12 +118,25 @@ def exibir():
             st.warning(NregDf01D)
         with colDR2:
             st.write("Nº TOTAL de dúvidas RESPONDIDAS:")
-            st.info(NregDf01R)
-        st.subheader(option)
-        st.warning('Dúvida(s) Enviada(s)')
-        st.write(df01D['duvida']) 
-        st.info('Resposta do(a) TUTOR(A):')
-        st.write(df01R['resposta'])   
+            st.success(NregDf01R)
+            
+        st.subheader(option)        
+        #st.write(df01D['duvida'])
+        colD, colR = st.columns((1,1))
+        with colD:
+            st.warning('Dúvida(s) Enviada(s)')
+            nD = len(df01D['duvida'])
+            for i in range(nD):
+                with st.chat_message("user"):   
+                    st.write(df01D['duvida'][i]) 
+        with colR:        
+            st.success('Resposta do(a) TUTOR(A):')
+            #st.write(df01R['resposta']) 
+            nR = len(df01R['resposta'])
+            for j in range(nR):
+                with st.chat_message("user", avatar = "👨‍⚖️"):
+                    st.write(df01R['resposta'][j])
+
   
 exibir() 
 with st.form("Formulario para RESPOSTAS DOS TUTORES", clear_on_submit=True):   
