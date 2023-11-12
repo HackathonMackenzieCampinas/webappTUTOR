@@ -149,7 +149,7 @@ with st.form("Formulario para RESPOSTAS DOS TUTORES", clear_on_submit=True):
     link = 'https://docs.google.com/forms/d/e/1FAIpQLSeCAO-D0694v2HCWnxEKzUVHcOPlfzRiLD0KX8ymbp-uopr2g/formResponse?&submit=Submit?usp=pp_url&entry.1836324468='
     link += str(MAIL)+'&entry.1777983526='+str(EQUIPE)+'&entry.1149657510='+str(NOME)+'&entry.268399899='+str(RESP)+'&entry.332935035='+str(OBS)
     submit = st.form_submit_button('✔️ ENVIAR RESPOSTA')
-    st.write("Link opcional em caso de problema no envio: [link](https://forms.gle/uJEfq98Z5ZP8mqoR7)")
+    st.write("Em caso de problema no envio utilize este [link](https://forms.gle/uJEfq98Z5ZP8mqoR7)")
     #https://forms.gle/uJEfq98Z5ZP8mqoR7
     if submit:
         r = http.request('GET', link)
